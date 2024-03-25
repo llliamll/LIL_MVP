@@ -28,6 +28,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
+        <activity android:name=".ReportOneStepTwo"
+            android:label="report_1_step_2"
+            android:parentActivityName=".PageOneActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PageOneActivity"/>
+        </activity>
     </application>
 
 </manifest>

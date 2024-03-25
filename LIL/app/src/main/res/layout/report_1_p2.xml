@@ -18,20 +18,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:text="Report Name:"
+        android:text="Size:"
         android:textSize="16dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tap the text box below to type in your name"
+        android:text="Select number of personnel, vehicles, aircrafts, or size of any object below"
         android:textSize="10dp" />
 
     <EditText
-        android:id="@+id/nameField"
+        android:id="@+id/sizeField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter report name here" />
+        android:hint="Enter size here" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -26,14 +26,15 @@ public class PageOneActivity extends AppCompatActivity {
 
         final EditText editText = (EditText) findViewById(R.id.nameField);
         Button buttonNext = findViewById(R.id.Next);
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                reportName = editText.getText().toString();
-                Intent intent = new Intent(PageOneActivity.this, ReportOneStepTwo.class);
-                startActivity(intent);
-            }
+        buttonNext.setOnClickListener( v-> {
+            Intent intent = new Intent(PageOneActivity.this, ReportOneStepTwo.class);
+            startActivity(intent);
+//            @Override
+//            public void onClick(View v) {
+//                //reportName = editText.getText().toString();
+//                Intent intent = new Intent(PageOneActivity.this, ReportOneStepTwo.class);
+//                startActivity(intent);
+//            }
         });
     }
 
