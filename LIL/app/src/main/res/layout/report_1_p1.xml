@@ -4,6 +4,13 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <Button
+        android:id="@+id/backToMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Menu" />
+
+
     <TextView
         android:layout_width="386dp"
         android:layout_height="wrap_content"
@@ -58,7 +65,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="160dp"
         android:layout_marginBottom="16dp"
         android:indeterminate="false"
         android:max="7"

@@ -16,5 +16,11 @@ public class ReportOneStepTwo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_1_p2);
 
+        Button mainMenu = findViewById(R.id.backToMenu);
+        mainMenu.setOnClickListener(v -> {
+            Intent intent = new Intent(ReportOneStepTwo.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
+
 }

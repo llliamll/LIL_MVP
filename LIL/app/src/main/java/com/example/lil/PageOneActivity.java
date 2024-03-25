@@ -31,6 +31,12 @@ public class PageOneActivity extends AppCompatActivity {
 //                startActivity(intent);
 //            }
         });
+
+        Button mainMenu = findViewById(R.id.backToMenu);
+        mainMenu.setOnClickListener(v -> {
+            Intent intent = new Intent(PageOneActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
 
     public String getName() {
