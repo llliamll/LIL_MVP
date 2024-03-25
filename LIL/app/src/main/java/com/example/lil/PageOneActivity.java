@@ -16,14 +16,9 @@ public class PageOneActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Set the content view to your layout for this activity
         setContentView(R.layout.report_1_p1);
 
-        // Enable the Up button in the action bar
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
+        //save the entered name and go to next page
         final EditText editText = (EditText) findViewById(R.id.nameField);
         Button buttonNext = findViewById(R.id.Next);
         buttonNext.setOnClickListener( v-> {
