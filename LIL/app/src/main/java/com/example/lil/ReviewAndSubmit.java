@@ -21,7 +21,7 @@ public class ReviewAndSubmit extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.review_n_submit);
 
-        //this is not working...
+        //this is not working... im too lazy to fix now, might comeback later
 //        size     = "Size: "         + new ReportOneStepTwo().getSize();
 //        activity = "Activity: "     + new ReportOneStepThree().getActivity();
 //        location = "Location: "     + new ReportOneStepFour().getLocation();
