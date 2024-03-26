@@ -24,17 +24,43 @@
         <activity android:name=".PageOneActivity"
             android:label="title_report_1_page_1"
             android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
         </activity>
+
         <activity android:name=".ReportOneStepTwo"
             android:label="report_1_step_2"
             android:parentActivityName=".PageOneActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".PageOneActivity"/>
         </activity>
+
+        <activity android:name=".ReportOneStepThree"
+            android:label="report_1_step_2"
+            android:parentActivityName=".ReportOneStepTwo">
+        </activity>
+
+        <activity android:name=".ReportOneStepFour"
+            android:label="report_1_step_2"
+            android:parentActivityName=".ReportOneStepThree">
+        </activity>
+
+        <activity android:name=".ReportOneStepFive"
+            android:label="report_1_step_2"
+            android:parentActivityName=".ReportOneStepFour">
+        </activity>
+
+        <activity android:name=".ReportOneStepSix"
+            android:label="report_1_step_2"
+            android:parentActivityName=".ReportOneStepFive">
+        </activity>
+
+        <activity android:name=".ReportOneStepSeven"
+            android:label="report_1_step_2"
+            android:parentActivityName=".ReportOneStepSix">
+        </activity>
+
+        <activity android:name=".ReviewAndSubmit"
+            android:label="report_1_step_2"
+            android:parentActivityName=".ReportOneStepSeven">
+        </activity>
+
     </application>
 
 </manifest>

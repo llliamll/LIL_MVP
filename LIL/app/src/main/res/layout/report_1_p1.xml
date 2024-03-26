@@ -45,19 +45,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:orientation="horizontal"
-        android:gravity="center_horizontal"> <!-- This centers the buttons horizontally -->
+        android:gravity="center_horizontal">
 
         <Button
+            android:id="@+id/Back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
-            android:layout_marginRight="16dp"/> <!-- Add margin for spacing between buttons -->
+            android:layout_marginRight="16dp"/>
 
         <Button
             android:id="@+id/Next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next" /> <!-- Assume you want a "Next" button instead of two "Back" buttons -->
+            android:text="Next" />
         </LinearLayout>
 
     <ProgressBar
