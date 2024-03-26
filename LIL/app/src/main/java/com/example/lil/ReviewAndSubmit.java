@@ -69,7 +69,7 @@ public class ReviewAndSubmit extends AppCompatActivity{
         otherButtons(editEquip);
         Button submit = findViewById(R.id.submitReport);
         submit.setOnClickListener(v -> {
-            Toast.makeText(ReviewAndSubmit.this, "Sending report to TOC", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ReviewAndSubmit.this, "Sending report", Toast.LENGTH_SHORT).show();
         });
 
         Button menu = findViewById(R.id.backToMenu);
