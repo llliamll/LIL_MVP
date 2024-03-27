@@ -36,7 +36,7 @@ public class ReportOneStepFour extends AppCompatActivity implements retrieveLoca
 
         Button mainMenu = findViewById(R.id.backToMenu);
         mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(ReportOneStepFour.this, MainActivity.class);
+            Intent intent = new Intent(ReportOneStepFour.this, PageOneActivity.class);
             startActivity(intent);
         });
 

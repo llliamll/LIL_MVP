@@ -37,7 +37,7 @@ public class ReportOneStepFive extends AppCompatActivity implements retrieveUnit
 
         Button mainMenu = findViewById(R.id.backToMenu);
         mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(ReportOneStepFive.this, MainActivity.class);
+            Intent intent = new Intent(ReportOneStepFive.this, PageOneActivity.class);
             startActivity(intent);
         });
 

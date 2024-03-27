@@ -40,7 +40,7 @@ public class ReportOneStepSeven extends AppCompatActivity implements retrieveEqu
 
         Button mainMenu = findViewById(R.id.backToMenu);
         mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(ReportOneStepSeven.this, MainActivity.class);
+            Intent intent = new Intent(ReportOneStepSeven.this, PageOneActivity.class);
             startActivity(intent);
         });
 

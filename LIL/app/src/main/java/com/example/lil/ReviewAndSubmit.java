@@ -34,7 +34,7 @@ public class ReviewAndSubmit extends AppCompatActivity{
         size     = "<b>Size: </b>"      + getVariable.getStringExtra("size");
         activity = "<b>Activity: </b>"  + getVariable.getStringExtra("activity");
         location = "<b>Location: </b>"  + getVariable.getStringExtra("location");
-        unit     = "<b>Unit: </b>"      + getVariable.getStringExtra("unit");
+        unit     = "<b>Uniform: </b>"   + getVariable.getStringExtra("unit");
         time     = "<b>Time: </b>"      + getVariable.getStringExtra("time");
         equip    = "<b>Equipment: </b>" + getVariable.getStringExtra("equip");
 

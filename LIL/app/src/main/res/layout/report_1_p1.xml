@@ -4,20 +4,13 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <Button
-        android:id="@+id/backToMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Main Menu" />
-
-
     <TextView
         android:layout_width="386dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:baselineAligned="false"
         android:gravity="center_horizontal"
-        android:text="SALUTE Report"
+        android:text="Report platform"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -25,20 +18,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:text="Report Name:"
+        android:text="Username:"
         android:textSize="16dp"/>
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter username" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tap the text box below to type in your name"
-        android:textSize="10dp" />
+        android:layout_marginTop="45dp"
+        android:text="Password:"
+        android:textSize="16dp"/>
 
     <EditText
-        android:id="@+id/nameField"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter report name here" />
+        android:hint="Enter password"
+        android:inputType="textPassword"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,41 +49,13 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/Back"
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back"
+            android:text="Login"
             android:layout_marginRight="16dp"/>
-
-        <Button
-            android:id="@+id/Next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next" />
         </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/step"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:layout_marginBottom="16dp"
-        android:indeterminate="false"
-        android:max="7"
-        android:progress="1"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Line 1 of 7" />
-    </LinearLayout>
 
     <!-- Add other UI elements as needed -->
 </LinearLayout>

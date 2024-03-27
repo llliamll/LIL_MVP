@@ -25,7 +25,7 @@ public class ReportOneStepTwo extends AppCompatActivity implements retrieveSize 
 
         Button mainMenu = findViewById(R.id.backToMenu);
         mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(ReportOneStepTwo.this, MainActivity.class);
+            Intent intent = new Intent(ReportOneStepTwo.this, PageOneActivity.class);
             startActivity(intent);
         });
 

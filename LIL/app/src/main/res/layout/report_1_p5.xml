@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:text="Unit:"
+        android:text="Uniform:"
         android:textSize="16dp"/>
 
     <TextView
@@ -37,7 +37,7 @@
         android:id="@+id/unitField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Unit here" />
+        android:hint="Enter Uniform here" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,8 +70,8 @@
         android:layout_marginTop="160dp"
         android:layout_marginBottom="16dp"
         android:indeterminate="false"
-        android:max="7"
-        android:progress="5"
+        android:max="6"
+        android:progress="4"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Line 5 of 7" />
+            android:text="Line 4 of 6" />
     </LinearLayout>
     <!-- Add other UI elements as needed -->
 </LinearLayout>

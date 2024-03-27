@@ -32,7 +32,7 @@ public class ReportOneStepThree extends AppCompatActivity implements retrieveAct
 
         Button mainMenu = findViewById(R.id.backToMenu);
         mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(ReportOneStepThree.this, MainActivity.class);
+            Intent intent = new Intent(ReportOneStepThree.this, PageOneActivity.class);
             startActivity(intent);
         });
 

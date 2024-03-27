@@ -39,7 +39,7 @@ public class ReportOneStepSix extends AppCompatActivity implements retrieveTime{
 
         Button mainMenu = findViewById(R.id.backToMenu);
         mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(ReportOneStepSix.this, MainActivity.class);
+            Intent intent = new Intent(ReportOneStepSix.this, PageOneActivity.class);
             startActivity(intent);
         });
 
