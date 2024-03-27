@@ -2,7 +2,9 @@ package com.example.lil;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import android.widget.Button;
@@ -27,6 +29,11 @@ public class PageOneActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //display name
+        TextView username = findViewById(R.id.menuUsername);
+        String text = "Welcome <b>" + getIntent().getStringExtra("username") + "</b>";
+        username.setText(Html.fromHtml(text,Html.FROM_HTML_MODE_LEGACY));
 
         //go to report 1
         Button buttonReportOne = findViewById(R.id.buttonPageOne);
