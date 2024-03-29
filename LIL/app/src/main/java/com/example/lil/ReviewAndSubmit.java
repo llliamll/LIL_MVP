@@ -74,7 +74,7 @@ public class ReviewAndSubmit extends AppCompatActivity{
 
         Button menu = findViewById(R.id.backToMenu);
         menu.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewAndSubmit.this, MainActivity.class);
+            Intent intent = new Intent(ReviewAndSubmit.this, PageOneActivity.class);
             startActivity(intent);
         });
     }
