@@ -1,0 +1,161 @@
+package com.example.lil;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Medevac_p8 extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.medevac_p8);
+
+        //retrieve previous data
+        Intent intentFromLast = getIntent();
+        Bundle extras = intentFromLast.getExtras();
+
+        //main page functions
+        //set initial values
+        TextView numA = findViewById(R.id.textViewCountA);
+        AtomicInteger countA = new AtomicInteger(0);
+        numA.setText(String.valueOf(countA.get()));
+
+        TextView numB = findViewById(R.id.textViewCountB);
+        AtomicInteger countB = new AtomicInteger(0);
+        numB.setText(String.valueOf(countB.get()));
+
+        TextView numC = findViewById(R.id.textViewCountC);
+        AtomicInteger countC = new AtomicInteger(0);
+        numC.setText(String.valueOf(countC.get()));
+
+        TextView numD = findViewById(R.id.textViewCountD);
+        AtomicInteger countD = new AtomicInteger(0);
+        numD.setText(String.valueOf(countD.get()));
+
+        TextView numE = findViewById(R.id.textViewCountE);
+        AtomicInteger countE = new AtomicInteger(0);
+        numE.setText(String.valueOf(countE.get()));
+
+
+        //use buttons to increase or decrease
+        //countA
+        Button plusA = findViewById(R.id.buttonPlusA);
+        plusA.setOnClickListener(v -> {
+            numA.setText(String.valueOf(countA.incrementAndGet()));
+        });
+        Button minusA = findViewById(R.id.buttonMinusA);
+        minusA.setOnClickListener(v -> {
+            if(countA.get() > 0){
+                numA.setText(String.valueOf(countA.decrementAndGet()));
+            }else{
+                Toast.makeText(Medevac_p8.this, "Cannot go below zero!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //countB
+        Button plusB = findViewById(R.id.buttonPlusB);
+        plusB.setOnClickListener(v -> {
+            numB.setText(String.valueOf(countB.incrementAndGet()));
+        });
+        Button minusB = findViewById(R.id.buttonMinusB);
+        minusB.setOnClickListener(v -> {
+            if(countB.get() > 0){
+                numB.setText(String.valueOf(countB.decrementAndGet()));
+            }else{
+                Toast.makeText(Medevac_p8.this, "Cannot go below zero!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //countC
+        Button plusC = findViewById(R.id.buttonPlusC);
+        plusC.setOnClickListener(v -> {
+            numC.setText(String.valueOf(countC.incrementAndGet()));
+        });
+        Button minusC = findViewById(R.id.buttonMinusC);
+        minusC.setOnClickListener(v -> {
+            if(countC.get() > 0){
+                numC.setText(String.valueOf(countC.decrementAndGet()));
+            }else{
+                Toast.makeText(Medevac_p8.this, "Cannot go below zero!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //countD
+        Button plusD = findViewById(R.id.buttonPlusD);
+        plusD.setOnClickListener(v -> {
+            numD.setText(String.valueOf(countD.incrementAndGet()));
+        });
+        Button minusD = findViewById(R.id.buttonMinusD);
+        minusD.setOnClickListener(v -> {
+            if(countD.get() > 0){
+                numD.setText(String.valueOf(countD.decrementAndGet()));
+            }else{
+                Toast.makeText(Medevac_p8.this, "Cannot go below zero!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //countE
+        Button plusE = findViewById(R.id.buttonPlusE);
+        plusE.setOnClickListener(v -> {
+            numE.setText(String.valueOf(countE.incrementAndGet()));
+        });
+        Button minusE = findViewById(R.id.buttonMinusE);
+        minusE.setOnClickListener(v -> {
+            if(countE.get() > 0){
+                numE.setText(String.valueOf(countE.decrementAndGet()));
+            }else{
+                Toast.makeText(Medevac_p8.this, "Cannot go below zero!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //next back and menu buttons
+        Button next = findViewById(R.id.Next);
+        next.setOnClickListener(v -> {
+            Intent intent = new Intent(Medevac_p8.this, Medevac_p9.class);
+            extras.putString("line8", checkQuantAndSave(numA.getText().toString(), numB.getText().toString(),
+                    numC.getText().toString(), numD.getText().toString(), numE.getText().toString()));
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
+
+        Button back = findViewById(R.id.Back);
+        back.setOnClickListener(v -> {
+            Intent intent = new Intent(Medevac_p8.this, Medevac_p7.class);
+            startActivity(intent);
+        });
+
+        Button menu = findViewById(R.id.backToMenu);
+        menu.setOnClickListener(v -> {
+            Intent intent = new Intent(Medevac_p8.this, Menu.class);
+            startActivity(intent);
+        });
+    }
+
+    //only pass on values greater than 0
+    public String checkQuantAndSave(String a, String b, String c, String d, String e){
+        String line8 = "";
+        if(Integer.valueOf(a) > 0){
+            line8 += a + " x A ";
+        }
+        if(Integer.valueOf(b) > 0){
+            line8 += b + " x B ";
+        }
+        if(Integer.valueOf(c) > 0){
+            line8 += c + " x C ";
+        }
+        if(Integer.valueOf(d) > 0){
+            line8 += d + " x D ";
+        }
+        if(Integer.valueOf(e) > 0){
+            line8 += e + " x E";
+        }
+
+        return line8;
+    }
+}

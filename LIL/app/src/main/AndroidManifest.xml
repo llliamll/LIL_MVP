@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
 
     <application
         android:allowBackup="true"
@@ -21,45 +24,94 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PageOneActivity"
+        <activity android:name=".Menu"
             android:label="title_report_1_page_1"
             android:parentActivityName=".MainActivity">
         </activity>
 
-        <activity android:name=".ReportOneStepTwo"
+        <activity android:name=".SALUTE"
             android:label="report_1_step_2"
-            android:parentActivityName=".PageOneActivity">
+            android:parentActivityName=".Menu">
         </activity>
 
-        <activity android:name=".ReportOneStepThree"
+        <activity android:name=".SALUTE_p2"
             android:label="report_1_step_2"
-            android:parentActivityName=".ReportOneStepTwo">
+            android:parentActivityName=".SALUTE">
         </activity>
 
-        <activity android:name=".ReportOneStepFour"
+        <activity android:name=".SALUTE_p3"
             android:label="report_1_step_2"
-            android:parentActivityName=".ReportOneStepThree">
+            android:parentActivityName=".SALUTE_p2">
         </activity>
 
-        <activity android:name=".ReportOneStepFive"
+        <activity android:name=".SALUTE_p4"
             android:label="report_1_step_2"
-            android:parentActivityName=".ReportOneStepFour">
+            android:parentActivityName=".SALUTE_p3">
         </activity>
 
-        <activity android:name=".ReportOneStepSix"
+        <activity android:name=".SALUTE_p5"
             android:label="report_1_step_2"
-            android:parentActivityName=".ReportOneStepFive">
+            android:parentActivityName=".SALUTE_p4">
         </activity>
 
-        <activity android:name=".ReportOneStepSeven"
+        <activity android:name=".SALUTE_p6"
             android:label="report_1_step_2"
-            android:parentActivityName=".ReportOneStepSix">
+            android:parentActivityName=".SALUTE_p5">
         </activity>
 
-        <activity android:name=".ReviewAndSubmit"
+        <activity android:name=".ReviewSALUTE"
             android:label="report_1_step_2"
-            android:parentActivityName=".ReportOneStepSeven">
+            android:parentActivityName=".SALUTE_p6">
         </activity>
+
+        <activity android:name=".Medevac"
+            android:label="medevac"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
+        <activity android:name=".Medevac_p2"
+            android:label="medevac_p2"
+            android:parentActivityName=".Medevac">
+        </activity>
+
+        <activity android:name=".Medevac_p3"
+            android:label="medevac_p3"
+            android:parentActivityName=".Medevac_p2">
+        </activity>
+
+        <activity android:name=".Medevac_p4"
+            android:label="medevac_p4"
+            android:parentActivityName=".Medevac_p3">
+        </activity>
+
+        <activity android:name=".Medevac_p5"
+            android:label="medevac_p5"
+            android:parentActivityName=".Medevac_p4">
+        </activity>
+
+        <activity android:name=".Medevac_p6"
+            android:label="medevac_p6"
+            android:parentActivityName=".Medevac_p5">
+        </activity>
+
+        <activity android:name=".Medevac_p7"
+            android:label="medevac_p7"
+            android:parentActivityName=".Medevac_p6">
+        </activity>
+
+        <activity android:name=".Medevac_p8"
+            android:label="medevac_p8"
+            android:parentActivityName=".Medevac_p7">
+        </activity>
+
+        <activity android:name=".Medevac_p9"
+            android:label="medevac_p5"
+            android:parentActivityName=".Medevac_p8">
+        </activity>
+        
+        <activity android:name=".ReviewMedevac"
+            android:label="reviewMedevac"
+            android:parentActivityName=".Medevac_p9"/>
 
     </application>
 

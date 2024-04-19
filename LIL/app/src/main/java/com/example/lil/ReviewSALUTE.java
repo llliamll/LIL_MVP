@@ -3,17 +3,22 @@ package com.example.lil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 // right now this page is hardcoded(ish) that only support displaying report one items
 // for future this should be dynamic and display other reports' items
 
-public class ReviewAndSubmit extends AppCompatActivity{
+public class ReviewSALUTE extends AppCompatActivity{
 
     private String size, activity, location, unit, time, equip;
     @Override
@@ -69,20 +74,55 @@ public class ReviewAndSubmit extends AppCompatActivity{
         otherButtons(editEquip);
         Button submit = findViewById(R.id.submitReport);
         submit.setOnClickListener(v -> {
-            Toast.makeText(ReviewAndSubmit.this, "Sending report", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ReviewSALUTE.this, "Sending report", Toast.LENGTH_SHORT).show();
         });
 
         Button menu = findViewById(R.id.backToMenu);
         menu.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewAndSubmit.this, PageOneActivity.class);
+            Intent intent = new Intent(ReviewSALUTE.this, Menu.class);
             startActivity(intent);
         });
     }
 
     private void otherButtons(Button button){
         button.setOnClickListener(v -> {
-            Toast.makeText(ReviewAndSubmit.this, "Not Yet Implemented...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ReviewSALUTE.this, "Not Yet Implemented...", Toast.LENGTH_SHORT).show();
         });
+    }
+
+    private void writeReport() {
+        String fileName = "SALUTE.txt";
+        FileOutputStream fileOutputStream = null;
+        OutputStreamWriter outputStreamWriter = null;
+        try {
+            fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
+            outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+
+            outputStreamWriter.write(Html.fromHtml(size, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
+            outputStreamWriter.write(Html.fromHtml(activity, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
+            outputStreamWriter.write(Html.fromHtml(location, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
+            outputStreamWriter.write(Html.fromHtml(unit, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
+            outputStreamWriter.write(Html.fromHtml(time, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
+            outputStreamWriter.write(Html.fromHtml(equip, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            Toast.makeText(this, "Failed to save report", Toast.LENGTH_SHORT).show();
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (outputStreamWriter != null) {
+                    outputStreamWriter.close();
+                }
+                if (fileOutputStream != null) {
+                    fileOutputStream.close();
+                }
+            } catch (IOException e) {
+                Log.e("WriteFile", "Error closing file: " + e.toString());
+            }
+        }
+
     }
 }
 

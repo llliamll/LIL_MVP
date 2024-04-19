@@ -15,15 +15,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_1_p1);
 
-        EditText name = (EditText) findViewById(R.id.username);
+        EditText name = findViewById(R.id.username);
         //save the entered name and go to next page
         Button buttonNext = findViewById(R.id.login);
         buttonNext.setOnClickListener( v-> {//record name and go to step two
-            Intent intent = new Intent(MainActivity.this, PageOneActivity.class);
-            intent.putExtra("username", name.getText().toString());
+            Intent intent = new Intent(MainActivity.this, Menu.class);
+            intent.putExtra("name", name.getText().toString());
             startActivity(intent);
         });
-
-
     }
 }

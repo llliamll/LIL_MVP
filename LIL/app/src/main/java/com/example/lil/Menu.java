@@ -1,9 +1,7 @@
 package com.example.lil;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 
-public class PageOneActivity extends AppCompatActivity {
+public class Menu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +28,29 @@ public class PageOneActivity extends AppCompatActivity {
             return insets;
         });
 
+        Bundle extras = new Bundle();
+
         //display name
         TextView username = findViewById(R.id.menuUsername);
-        String text = "Welcome <b>" + getIntent().getStringExtra("username") + "</b>";
+        String name = getIntent().getStringExtra("name");
+        String text = "Welcome <b>" + name + "</b>";
         username.setText(Html.fromHtml(text,Html.FROM_HTML_MODE_LEGACY));
+        extras.putString("name", name);
+
 
         //go to report 1
         Button buttonReportOne = findViewById(R.id.buttonPageOne);
         buttonReportOne.setOnClickListener(v -> {
-            Intent intent = new Intent(PageOneActivity.this, ReportOneStepTwo.class);
+            Intent intent = new Intent(Menu.this, SALUTE.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
+
+        //go to report MEDEVAC
+        Button medevac = findViewById(R.id.buttonPageSix);
+        medevac.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu.this, Medevac.class);
+            intent.putExtras(extras);
             startActivity(intent);
         });
 
@@ -51,13 +63,11 @@ public class PageOneActivity extends AppCompatActivity {
         otherButtons(buttonReportFour);
         Button buttonReportFive = findViewById(R.id.buttonPageFive);
         otherButtons(buttonReportFive);
-        Button buttonReportSix = findViewById(R.id.buttonPageSix);
-        otherButtons(buttonReportSix);
     }
 
     private void otherButtons(Button button){
         button.setOnClickListener(v -> {
-            Toast.makeText(PageOneActivity.this, "Not Yet Implemented...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Menu.this, "Not Yet Implemented...", Toast.LENGTH_SHORT).show();
         });
     }
 }

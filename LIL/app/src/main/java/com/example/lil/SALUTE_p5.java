@@ -7,13 +7,13 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ReportOneStepSeven extends AppCompatActivity implements retrieveEquip{
-    private String size, activity, location, unit, time, equip;
+public class SALUTE_p5 extends AppCompatActivity implements retrieveTime{
+    private String size, activity, location, unit, time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.report_1_p7);
+        setContentView(R.layout.report_1_p6);
 
         //get previous variable(s)
         Intent getVariable = getIntent();
@@ -21,37 +21,35 @@ public class ReportOneStepSeven extends AppCompatActivity implements retrieveEqu
         activity = getVariable.getStringExtra("activity");
         location = getVariable.getStringExtra("location");
         unit = getVariable.getStringExtra("unit");
-        time = getVariable.getStringExtra("time");
 
-        final EditText editText = (EditText) findViewById(R.id.equipField);
+
+        final EditText editText = (EditText) findViewById(R.id.timeField);
         Button next = findViewById(R.id.Next);
         next.setOnClickListener(v -> {//record size and go to step three
-            equip = editText.getText().toString();
-            Intent intent = new Intent(ReportOneStepSeven.this, ReviewAndSubmit.class);
+            time = editText.getText().toString();
+            Intent intent = new Intent(SALUTE_p5.this, SALUTE_p6.class);
             //again this is a temp solution
             intent.putExtra("size", size);
             intent.putExtra("activity", activity);
             intent.putExtra("location", location);
             intent.putExtra("unit", unit);
             intent.putExtra("time", time);
-            intent.putExtra("equip", equip);
             startActivity(intent);
         });
 
         Button mainMenu = findViewById(R.id.backToMenu);
         mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(ReportOneStepSeven.this, PageOneActivity.class);
+            Intent intent = new Intent(SALUTE_p5.this, Menu.class);
             startActivity(intent);
         });
 
         Button back = findViewById(R.id.Back);
         back.setOnClickListener(v -> {//go to step one
-            Intent intent = new Intent(ReportOneStepSeven.this, ReportOneStepSix.class);
+            Intent intent = new Intent(SALUTE_p5.this, SALUTE_p4.class);
             startActivity(intent);
         });
     }
-
     @Override
-    public String getEquip() { return equip; }
+    public String getTime() { return time; }
 
 }

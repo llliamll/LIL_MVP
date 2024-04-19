@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/backToMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Menu" />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/bottomPanel"
+       android:orientation="vertical"
+       android:layout_marginBottom="200dp">
+       <TextView
+           android:layout_width="386dp"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="120dp"
+           android:baselineAligned="false"
+           android:gravity="center_horizontal"
+           android:text="MEDEVAC Report"
+           android:textSize="20dp"
+           android:textStyle="bold" />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="45dp"
+           android:text="Line 4: Special equipment requried"
+           android:textSize="16dp"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Select equipment required. You may select multiple"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+           <CheckBox
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/noEquip"
+               android:text="A - None"/>
+
+           <CheckBox
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/hoist"
+               android:text="B - Hoist"/>
+
+           <CheckBox
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/extraction"
+               android:text="C - Extraction equipment"/>
+
+           <CheckBox
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/ventilator"
+               android:text="D - Ventilator"/>
+
+       </LinearLayout>
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomPanel"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/Back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_marginRight="16dp"/>
+
+            <Button
+                android:id="@+id/Next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/step"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="16dp"
+            android:indeterminate="false"
+            android:max="9"
+            android:progress="4"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Line 4 of 9" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Add other UI elements as needed -->
+</RelativeLayout>

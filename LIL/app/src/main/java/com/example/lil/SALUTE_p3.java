@@ -5,10 +5,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ReportOneStepFour extends AppCompatActivity implements retrieveLocation{
+public class SALUTE_p3 extends AppCompatActivity implements retrieveLocation{
     private String size, activity, location;
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -26,7 +25,7 @@ public class ReportOneStepFour extends AppCompatActivity implements retrieveLoca
         Button next = findViewById(R.id.Next);
         next.setOnClickListener(v -> {//record size and go to step three
             location = editText.getText().toString();
-            Intent intent = new Intent(ReportOneStepFour.this, ReportOneStepFive.class);
+            Intent intent = new Intent(SALUTE_p3.this, SALUTE_p4.class);
             //again this is a temp solution
             intent.putExtra("size", size);
             intent.putExtra("activity", activity);
@@ -36,13 +35,13 @@ public class ReportOneStepFour extends AppCompatActivity implements retrieveLoca
 
         Button mainMenu = findViewById(R.id.backToMenu);
         mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(ReportOneStepFour.this, PageOneActivity.class);
+            Intent intent = new Intent(SALUTE_p3.this, Menu.class);
             startActivity(intent);
         });
 
         Button back = findViewById(R.id.Back);
         back.setOnClickListener(v -> {//go to step one
-            Intent intent = new Intent(ReportOneStepFour.this, ReportOneStepThree.class);
+            Intent intent = new Intent(SALUTE_p3.this, SALUTE_p2.class);
             startActivity(intent);
         });
     }
