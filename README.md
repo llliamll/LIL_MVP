@@ -7,5 +7,5 @@ To run, modify, or test the code:
 - You can now run the MainActivity.java to see app behavior 
 - The UI/layout files are in app/src/main/res/layout folder
 
-*Currently the SALUTE report process is complete, but it is kinda 
+*Currently the SALUTE and Medevac report processes are complete, but they are kinda 
 hardcoded. Only to be used as a proof-of-concept demo.*
