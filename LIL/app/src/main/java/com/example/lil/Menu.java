@@ -54,6 +54,14 @@ public class Menu extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //view existing report(s)
+        Button view = findViewById(R.id.viewReport);
+        view.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu.this, viewReport.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         //display a message for other buttons
         Button buttonReportTwo = findViewById(R.id.buttonPageTwo);
         otherButtons(buttonReportTwo);

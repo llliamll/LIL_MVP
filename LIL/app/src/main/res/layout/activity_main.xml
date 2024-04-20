@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Select the type of report to fill:"
+        android:text="Select the report or view existing reports:"
         android:textStyle="bold"
         android:textSize="20dp"
         android:layout_marginTop="150dp"
@@ -79,6 +79,13 @@
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:text="MEDEVAC" />
+
+        <Button
+            android:id="@+id/viewReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="View exisiting report(s)" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

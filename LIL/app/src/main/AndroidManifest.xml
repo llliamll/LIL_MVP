@@ -29,6 +29,10 @@
             android:parentActivityName=".MainActivity">
         </activity>
 
+        <activity android:name=".viewReport"
+            android:label="viewReport">
+        </activity>
+
         <activity android:name=".SALUTE"
             android:label="report_1_step_2"
             android:parentActivityName=".Menu">
