@@ -8,12 +8,10 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.report_1_p1);
+        setContentView(R.layout.login);
 
         EditText name = findViewById(R.id.username);
         //save the entered name and go to next page

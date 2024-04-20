@@ -9,15 +9,18 @@
         android:layout_height="wrap_content"
         android:text="Main Menu" />
 
+    <!--    main page contents-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_above="@+id/bottomPanel"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
                 android:baselineAligned="false"
                 android:gravity="center_horizontal"
                 android:text="MEDEVAC Report"
@@ -31,49 +34,49 @@
             android:text="Line 7: Method of marking pick-up site"
             android:textSize="16dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select marking. You may select multiple."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select marking. You may select multiple."/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <CheckBox
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/panels"
-                android:text="A - Panels"/>
+                android:orientation="vertical">
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/pyrotechnic"
-                android:text="B - Pyrotechnic Signal"/>
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/panels"
+                    android:text="A - Panels"/>
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/smoke"
-                android:text="C - Smoke signal"/>
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pyrotechnic"
+                    android:text="B - Pyrotechnic Signal"/>
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/noMarking"
-                android:text="D - None"/>
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/smoke"
+                    android:text="C - Smoke signal"/>
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/other"
-                android:text="E - Other"/>
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/noMarking"
+                    android:text="D - None"/>
 
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/other"
+                    android:text="E - Other"/>
+
+            </LinearLayout>
         </LinearLayout>
-        </LinearLayout>
-
+    <!--    main page contents-->
     <LinearLayout
         android:id="@+id/bottomPanel"
         android:layout_width="match_parent"
@@ -84,7 +87,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:orientation="horizontal"
             android:gravity="center_horizontal">
 
@@ -100,6 +102,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="25dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/saveNReview"
+                android:text="Save"/>
         </LinearLayout>
 
         <ProgressBar

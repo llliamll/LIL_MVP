@@ -1,7 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <Button
@@ -10,202 +9,219 @@
         android:layout_height="wrap_content"
         android:text="Main Menu" />
 
-    <TextView
-        android:layout_width="386dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:baselineAligned="false"
-        android:gravity="center_horizontal"
-        android:text="9-line MEDEVAC"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/bottomPanel"
+        android:layout_marginTop="50dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/bottomPanel"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="386dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:baselineAligned="false"
+                android:gravity="center_horizontal"
+                android:text="9-line MEDEVAC"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/line1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <Button
+                    android:id="@+id/line1BUtton"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <Button
+                    android:id="@+id/line2Button"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/line3"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/line3Button"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/line4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <Button
+                    android:id="@+id/line4Button"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/line5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <Button
+                    android:id="@+id/line5Button"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/line6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <Button
+                    android:id="@+id/line6Button"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/line7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <Button
+                    android:id="@+id/line7Button"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/line8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <Button
+                    android:id="@+id/line8Button"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/line9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <Button
+                    android:id="@+id/line9Button"
+                    android:layout_marginLeft="160dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/line1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-
-        <Button
-            android:id="@+id/line1BUtton"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/line2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-
-        <Button
-            android:id="@+id/line2Button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:id="@+id/line3"
-            android:layout_width="172dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/line3Button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/line4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-
-        <Button
-            android:id="@+id/line4Button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/line5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-
-        <Button
-            android:id="@+id/line5Button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/line6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-
-        <Button
-            android:id="@+id/line6Button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/line7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-
-        <Button
-            android:id="@+id/line7Button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/line8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-
-        <Button
-            android:id="@+id/line8Button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/line9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-
-        <Button
-            android:id="@+id/line9Button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="25dp"
+        android:id="@+id/bottomPanel"
+        android:layout_alignParentBottom="true">
         <Button
             android:id="@+id/submitReport"
             android:layout_width="wrap_content"
@@ -214,4 +230,4 @@
     </LinearLayout>
 
     <!-- Add other UI elements as needed -->
-</LinearLayout>
+</RelativeLayout>

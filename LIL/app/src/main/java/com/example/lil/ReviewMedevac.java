@@ -1,5 +1,6 @@
 package com.example.lil;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -7,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.FileNotFoundException;
@@ -31,12 +33,12 @@ public class ReviewMedevac extends AppCompatActivity{
         name  = "<b>Name:  </b>" + extras.getString("name");
         line1 = "<b>LINE1: </b>" + extras.getString("line1");
         line2 = "<b>LINE2: </b>" + extras.getString("line2");
-        line3 = "<b>LINE3: </b>" + extras.getString("line3");
+        line3 = "<b>LINE3: </b><div>" + extras.getString("line3") + "</div>";
         line4 = "<b>LINE4: </b>" + extras.getString("line4");
-        line5 = "<b>LINE5: </b>" + extras.getString("line5");
+        line5 = "<b>LINE5: </b><div>" + extras.getString("line5") + "</div>";
         line6 = "<b>LINE6: </b>" + extras.getString("line6");
         line7 = "<b>LINE7: </b>" + extras.getString("line7");
-        line8 = "<b>LINE8: </b>" + extras.getString("line8");
+        line8 = "<b>LINE8: </b><div>" + extras.getString("line8") + "</div>";
         line9 = "<b>LINE9: </b>" + extras.getString("line9");
 
         //display on screen
@@ -59,45 +61,105 @@ public class ReviewMedevac extends AppCompatActivity{
         TextView tv9 = findViewById(R.id.line9);
         tv9.setText(Html.fromHtml(line9,Html.FROM_HTML_MODE_LEGACY));
 
-        //TODO: implement going back to specific page and change info
-        // Note: going back to specific page is very easy to do, just need figure out how to make the previous inputs stay there
-        // maybe I can pass the info back to these pages again using intent.putExtra()
+        //-------------edit input buttons------------------
         Button b1 = findViewById(R.id.line1BUtton);
-        otherButtons(b1);
+        b1.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button b2 = findViewById(R.id.line2Button);
-        otherButtons(b2);
+        b2.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac_p2.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button b3 = findViewById(R.id.line3Button);
-        otherButtons(b3);
+        b3.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac_p3.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button b4 = findViewById(R.id.line4Button);
-        otherButtons(b4);
+        b4.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac_p4.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button b5 = findViewById(R.id.line5Button);
-        otherButtons(b5);
+        b5.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac_p5.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button b6 = findViewById(R.id.line6Button);
-        otherButtons(b6);
+        b6.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac_p6.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button b7 = findViewById(R.id.line7Button);
-        otherButtons(b7);
+        b7.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac_p7.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button b8 = findViewById(R.id.line8Button);
-        otherButtons(b8);
+        b8.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac_p8.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button b9 = findViewById(R.id.line9Button);
-        otherButtons(b9);
+        b9.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewMedevac.this, Medevac_p9.class);
+            extras.putBoolean("edit", true);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
+        //-------------edit input------------------
 
+        //submit the reports
+        //NOTE: for this MPV, submit only saves a report since we don't really
+        //have the functionality of communicating
         Button submit = findViewById(R.id.submitReport);
         submit.setOnClickListener(v -> {
             Toast.makeText(ReviewMedevac.this, "Sending report", Toast.LENGTH_SHORT).show();
             writeReport();
         });
 
+        //back to menu, inputs will be cleared
         Button menu = findViewById(R.id.backToMenu);
         menu.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Menu.class);
-            intent.putExtra("name", extras.getString("name"));
-            startActivity(intent);
-        });
-    }
 
-    private void otherButtons(Button button){
-        button.setOnClickListener(v -> {
-            Toast.makeText(ReviewMedevac.this, "Not Yet Implemented...", Toast.LENGTH_SHORT).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Confirm back to menu");
+            builder.setMessage("All input will be cleared");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(ReviewMedevac.this, Menu.class);
+                    intent.putExtra("name", extras.getString("name"));
+                    startActivity(intent);
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
         });
     }
 

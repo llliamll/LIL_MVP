@@ -1,53 +1,65 @@
 package com.example.lil;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SALUTE_p4 extends AppCompatActivity implements retrieveUnit{
+public class SALUTE_p4 extends AppCompatActivity{
     private String size, activity, location, unit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.report_1_p5);
+        setContentView(R.layout.salute_p4);
 
         //get previous variable(s)
-        Intent getVariable = getIntent();
-        size = getVariable.getStringExtra("size");
-        activity = getVariable.getStringExtra("activity");
-        location = getVariable.getStringExtra("location");
+        Bundle extras = getIntent().getExtras();
 
-
-        final EditText editText = (EditText) findViewById(R.id.unitField);
+        final EditText editText = findViewById(R.id.unitField);
         Button next = findViewById(R.id.Next);
         next.setOnClickListener(v -> {//record size and go to step three
-            unit = editText.getText().toString();
             Intent intent = new Intent(SALUTE_p4.this, SALUTE_p5.class);
-            //again this is a temp solution
-            intent.putExtra("size", size);
-            intent.putExtra("activity", activity);
-            intent.putExtra("location", location);
-            intent.putExtra("unit", unit);
+            extras.putString("unit", editText.getText().toString());
+            intent.putExtras(extras);
             startActivity(intent);
         });
 
-        Button mainMenu = findViewById(R.id.backToMenu);
-        mainMenu.setOnClickListener(v -> {//go back to main menu
-            Intent intent = new Intent(SALUTE_p4.this, Menu.class);
-            startActivity(intent);
+        Button menu = findViewById(R.id.backToMenu);
+        menu.setOnClickListener(v -> {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Confirm back to menu");
+            builder.setMessage("All input will be cleared");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(SALUTE_p4.this, Menu.class);
+                    intent.putExtra("name", extras.getString("name"));
+                    startActivity(intent);
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
         });
 
         Button back = findViewById(R.id.Back);
         back.setOnClickListener(v -> {//go to step one
             Intent intent = new Intent(SALUTE_p4.this, SALUTE_p3.class);
+            intent.putExtras(extras);
             startActivity(intent);
         });
     }
-    @Override
-    public String getUnit() { return unit; }
 
 }

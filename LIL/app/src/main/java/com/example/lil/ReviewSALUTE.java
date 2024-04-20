@@ -20,30 +20,25 @@ import java.io.OutputStreamWriter;
 
 public class ReviewSALUTE extends AppCompatActivity{
 
-    private String size, activity, location, unit, time, equip;
+    private String reportName, name, size, activity, location, unit, time, equip;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.review_n_submit);
 
-        //this is not working... im too lazy to fix now, might comeback later
-//        size     = "Size: "         + new ReportOneStepTwo().getSize();
-//        activity = "Activity: "     + new ReportOneStepThree().getActivity();
-//        location = "Location: "     + new ReportOneStepFour().getLocation();
-//        unit     = "Uniform/Unit: " + new ReportOneStepFive().getUnit();
-//        time     = "Time: "         + new ReportOneStepSix().getTime();
-//        equip    = "Equipment: "    + new ReportOneStepSeven().getEquip();
+        Bundle extras = getIntent().getExtras();
 
         //get all input information
-        Intent getVariable = getIntent();
-        size     = "<b>Size: </b>"      + getVariable.getStringExtra("size");
-        activity = "<b>Activity: </b>"  + getVariable.getStringExtra("activity");
-        location = "<b>Location: </b>"  + getVariable.getStringExtra("location");
-        unit     = "<b>Uniform: </b>"   + getVariable.getStringExtra("unit");
-        time     = "<b>Time: </b>"      + getVariable.getStringExtra("time");
-        equip    = "<b>Equipment: </b>" + getVariable.getStringExtra("equip");
+        reportName = "<b>SALUTE report</b>";
+        name     = "<b>Name:      </b>" + extras.getString("name");
+        size     = "<b>Size:      </b>" + extras.getString("size");
+        activity = "<b>Activity:  </b>" + extras.getString("activity");
+        location = "<b>Location:  </b>" + extras.getString("location");
+        unit     = "<b>Uniform:   </b>" + extras.getString("unit");
+        time     = "<b>Time:      </b>" + extras.getString("time");
+        equip    = "<b>Equipment: </b>" + extras.getString("equip");
 
-        //display on screen
+        //display user input on screen
         TextView tv1 = findViewById(R.id.sizeReview);
         tv1.setText(Html.fromHtml(size,Html.FROM_HTML_MODE_LEGACY));
         TextView tv2 = findViewById(R.id.activityReview);
@@ -57,36 +52,61 @@ public class ReviewSALUTE extends AppCompatActivity{
         TextView tv6 = findViewById(R.id.equipReview);
         tv6.setText(Html.fromHtml(equip,Html.FROM_HTML_MODE_LEGACY));
 
-        //TODO: implement going back to specific page and change info
-        // Note: going back to specific page is very easy to do, just need figure out how to make the previous inputs stay there
-        // maybe I can pass the info back to these pages again using intent.putExtra()
+
+        //-------------edit input buttons------------------
         Button editSize = findViewById(R.id.editSize);
-        otherButtons(editSize);
+        editSize.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewSALUTE.this, SALUTE.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button editActivity = findViewById(R.id.editActivity);
-        otherButtons(editActivity);
+        editActivity.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p2.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button editLocation = findViewById(R.id.editLocation);
-        otherButtons(editLocation);
+        editLocation.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p3.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button editUnit = findViewById(R.id.editUnit);
-        otherButtons(editUnit);
+        editUnit.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p4.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button editTime = findViewById(R.id.editTime);
-        otherButtons(editTime);
+        editTime.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p5.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
         Button editEquip = findViewById(R.id.editEquip);
-        otherButtons(editEquip);
+        editEquip.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p6.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
+        //-------------edit input------------------
+
+        //submit the reports
+        //NOTE: for this MPV, submit only saves a report since we don't really
+        //have the functionality of communicating
         Button submit = findViewById(R.id.submitReport);
         submit.setOnClickListener(v -> {
             Toast.makeText(ReviewSALUTE.this, "Sending report", Toast.LENGTH_SHORT).show();
+            writeReport();
         });
 
+        //back to menu, inputs will be cleared
         Button menu = findViewById(R.id.backToMenu);
         menu.setOnClickListener(v -> {
             Intent intent = new Intent(ReviewSALUTE.this, Menu.class);
+            intent.putExtra("name",name);
             startActivity(intent);
-        });
-    }
-
-    private void otherButtons(Button button){
-        button.setOnClickListener(v -> {
-            Toast.makeText(ReviewSALUTE.this, "Not Yet Implemented...", Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -98,6 +118,8 @@ public class ReviewSALUTE extends AppCompatActivity{
             fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
             outputStreamWriter = new OutputStreamWriter(fileOutputStream);
 
+            outputStreamWriter.write(Html.fromHtml(reportName, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
+            outputStreamWriter.write(Html.fromHtml(name,  Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
             outputStreamWriter.write(Html.fromHtml(size, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
             outputStreamWriter.write(Html.fromHtml(activity, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
             outputStreamWriter.write(Html.fromHtml(location, Html.FROM_HTML_MODE_LEGACY).toString() + "\n");
