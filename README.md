@@ -8,6 +8,9 @@ To run, modify, or test the code:
 - You can now run the MainActivity.java to see app behavior 
 - The UI/layout files are in app/src/main/res
 
+To install on a device
+- Go to LIL/APP/release and download the USAF507_MVP.apk
+
 I have implemented the SALUTE, UXO, and MEDEVAC reporting processes which can be accessed through the main menu. 
 The night mode button can make the app present content on a black background with red text for low-light scenarios.
 You can fill in the reports following the prompt on each page, and the report will be saved once the user presses the submit button on the last page of each report. 
