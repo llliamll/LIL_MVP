@@ -174,19 +174,19 @@ public class Medevac_p8 extends AppCompatActivity {
     public String checkQuantAndSave(String a, String b, String c, String d, String e){
         String line8 = "";
         if(Integer.valueOf(a) > 0){
-            line8 += a + " x A <br>";
+            line8 += a + " x A - US Military<br>";
         }
         if(Integer.valueOf(b) > 0){
-            line8 += b + " x B <br>";
+            line8 += b + " x B - US Civilian<br>";
         }
         if(Integer.valueOf(c) > 0){
-            line8 += c + " x C <br>";
+            line8 += c + " x C - Non-US Military<br>";
         }
         if(Integer.valueOf(d) > 0){
-            line8 += d + " x D <br>";
+            line8 += d + " x D - Non-US Civilian<br>";
         }
         if(Integer.valueOf(e) > 0){
-            line8 += e + " x E";
+            line8 += e + " x E - EPW";
         }
 
         return line8;

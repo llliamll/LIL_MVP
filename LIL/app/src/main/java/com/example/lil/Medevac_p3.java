@@ -155,16 +155,16 @@ public class Medevac_p3 extends AppCompatActivity {
     public String checkQuantAndSave(String a, String b, String c, String d){
         String line3 = "";
         if(Integer.valueOf(a) > 0){
-            line3 += a + " x A <br>";
+            line3 += a + " x A - Urgent <br>";
         }
         if(Integer.valueOf(b) > 0){
-            line3 += b + " x B <br>";
+            line3 += b + " x B - Priority <br>";
         }
         if(Integer.valueOf(c) > 0){
-            line3 += c + " x C <br>";
+            line3 += c + " x C - Routine <br>";
         }
         if(Integer.valueOf(d) > 0){
-            line3 += d + " x D";
+            line3 += d + " x D - Convenience";
         }
         return line3;
 

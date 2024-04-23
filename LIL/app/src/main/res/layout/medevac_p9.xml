@@ -65,7 +65,7 @@
                     android:textColor="@color/textColor"/>
 
                 <EditText
-                    android:textColor="@color/textColor"
+                    android:textColorHint="@color/textColor"
                     android:id="@+id/otherContamination"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"

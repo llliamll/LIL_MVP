@@ -117,10 +117,10 @@ public class Medevac_p5 extends AppCompatActivity {
     public String checkQuantAndSave(String a, String b){
         String line5 = "";
         if(Integer.valueOf(a) > 0){
-            line5 += a + " x A <br>";
+            line5 += a + " x L - Litter (Lying Down) <br>";
         }
         if(Integer.valueOf(b) > 0){
-            line5 += b + " x B";
+            line5 += b + " x A - Ambulatory (Can Sit) ";
         }
 
         return line5;
