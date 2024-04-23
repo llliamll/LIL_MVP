@@ -17,31 +17,29 @@ import java.io.OutputStreamWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 import android.util.Log;
 
-public class ReviewMedevac extends AppCompatActivity{
+public class ReviewUXO extends AppCompatActivity{
 
     private String reportName, name, line1, line2, line3, line4, line5, line6, line7, line8, line9;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.review_medevac);
-
+        setContentView(R.layout.review_uxo);
 
         //get all input information
         Intent savedData = getIntent();
         Bundle extras = savedData.getExtras();
-        reportName = "<b>Medevac Report</b>";
+        reportName = "<b>UXO Report</b>";
         name  = "<b>Name:  </b>" + extras.getString("name");
         line1 = "<b>LINE1: </b>" + extras.getString("line1");
         line2 = "<b>LINE2: </b>" + extras.getString("line2");
-        line3 = "<b>LINE3: </b><div>" + extras.getString("line3") + "</div>";
+        line3 = "<b>LINE3: </b>" + extras.getString("line3");
         line4 = "<b>LINE4: </b>" + extras.getString("line4");
-        line5 = "<b>LINE5: </b><div>" + extras.getString("line5") + "</div>";
+        line5 = "<b>LINE5: </b>" + extras.getString("line5");
         line6 = "<b>LINE6: </b>" + extras.getString("line6");
         line7 = "<b>LINE7: </b>" + extras.getString("line7");
-        line8 = "<b>LINE8: </b><div>" + extras.getString("line8") + "</div>";
+        line8 = "<b>LINE8: </b>" + extras.getString("line8");
         line9 = "<b>LINE9: </b>" + extras.getString("line9");
 
         //display on screen
@@ -67,63 +65,63 @@ public class ReviewMedevac extends AppCompatActivity{
         //-------------edit input buttons------------------
         Button b1 = findViewById(R.id.line1BUtton);
         b1.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button b2 = findViewById(R.id.line2Button);
         b2.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac_p2.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO_p2.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button b3 = findViewById(R.id.line3Button);
         b3.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac_p3.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO_p3.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button b4 = findViewById(R.id.line4Button);
         b4.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac_p4.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO_p4.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button b5 = findViewById(R.id.line5Button);
         b5.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac_p5.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO_p5.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button b6 = findViewById(R.id.line6Button);
         b6.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac_p6.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO_p6.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button b7 = findViewById(R.id.line7Button);
         b7.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac_p7.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO_p7.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button b8 = findViewById(R.id.line8Button);
         b8.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac_p8.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO_p8.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button b9 = findViewById(R.id.line9Button);
         b9.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewMedevac.this, Medevac_p9.class);
+            Intent intent = new Intent(ReviewUXO.this, UXO_p9.class);
             extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
@@ -135,21 +133,20 @@ public class ReviewMedevac extends AppCompatActivity{
         //have the functionality of communicating
         Button submit = findViewById(R.id.submitReport);
         submit.setOnClickListener(v -> {
-            Toast.makeText(ReviewMedevac.this, "Sending report", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ReviewUXO.this, "Sending report", Toast.LENGTH_SHORT).show();
             writeReport();
         });
 
         //back to menu, inputs will be cleared
         Button menu = findViewById(R.id.backToMenu);
         menu.setOnClickListener(v -> {
-
             AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialogTheme);
             builder.setTitle("Confirm back to menu");
             builder.setMessage("All input will be cleared");
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(ReviewMedevac.this, Menu.class);
+                    Intent intent = new Intent(ReviewUXO.this, Menu.class);
                     intent.putExtra("name", extras.getString("name"));
                     startActivity(intent);
                 }
@@ -176,8 +173,7 @@ public class ReviewMedevac extends AppCompatActivity{
             dateTime = now.format(formatter);
         }
 
-        String fileName = "Medevac " + dateTime + ".txt";
-
+        String fileName = "UXOReport " + dateTime + ".txt";
         FileOutputStream fileOutputStream = null;
         OutputStreamWriter outputStreamWriter = null;
         try {

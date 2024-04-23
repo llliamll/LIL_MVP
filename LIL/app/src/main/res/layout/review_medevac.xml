@@ -4,6 +4,7 @@
     android:padding="16dp">
 
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +47,7 @@
                     />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line1BUtton"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -66,6 +68,7 @@
                     />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line2Button"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -86,6 +89,7 @@
                     android:layout_weight="1" />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line3Button"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -106,6 +110,7 @@
                     />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line4Button"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -126,6 +131,7 @@
                     />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line5Button"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -146,6 +152,7 @@
                     />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line6Button"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -166,6 +173,7 @@
                     />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line7Button"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -186,6 +194,7 @@
                     />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line8Button"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -206,6 +215,7 @@
                     />
 
                 <Button
+                style="?attr/buttonStyleCustom"
                     android:id="@+id/line9Button"
                     android:layout_marginLeft="160dp"
                     android:layout_width="wrap_content"
@@ -223,6 +233,7 @@
         android:id="@+id/bottomPanel"
         android:layout_alignParentBottom="true">
         <Button
+                style="?attr/buttonStyleCustom"
             android:id="@+id/submitReport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -4,67 +4,76 @@
     android:padding="16dp">
 
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Main Menu" />
 
 <!--    main page contents-->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:layout_above="@+id/bottomPanel"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:gravity="center_horizontal"
-            android:text="MEDEVAC Report"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:text="Line 9: NBC Contamination"
-            android:textSize="16dp" />
-
+        android:layout_alignParentTop="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/nuclear"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="N - Nuclear" />
+                android:baselineAligned="false"
+                android:gravity="center_horizontal"
+                android:text="MEDEVAC Report"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-            <CheckBox
-                android:id="@+id/bio"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:text="Line 9: NBC Contamination"
+                android:textSize="16dp" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B - Biological" />
+                android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/chem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="C - Chemical" />
+                <CheckBox
+                    android:id="@+id/nuclear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="N - Nuclear"
+                    android:textColor="@color/textColor"/>
 
-            <EditText
-                android:id="@+id/otherContamination"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:hint="Other. Please describe any other important details or terrain features." />
+                <CheckBox
+                    android:id="@+id/bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B - Biological"
+                    android:textColor="@color/textColor"/>
 
+                <CheckBox
+                    android:id="@+id/chem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C - Chemical"
+                    android:textColor="@color/textColor"/>
+
+                <EditText
+                    android:textColor="@color/textColor"
+                    android:id="@+id/otherContamination"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:hint="Other. Please describe any other important details or terrain features." />
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
     <!--    main page contents-->
 
 <!--    progress bar page num and buttons    -->
@@ -82,6 +91,7 @@
             android:gravity="center_horizontal">
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,6 +99,7 @@
                 android:layout_marginRight="16dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,6 +112,7 @@
             android:gravity="center"
             android:layout_marginTop="25dp">
             <Button
+                style="?attr/buttonStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"

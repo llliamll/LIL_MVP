@@ -4,6 +4,7 @@
     android:padding="16dp">
 
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,25 +50,29 @@
                 android:id="@+id/noEnemy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="N - No enemy troops in area" />
+                android:text="N - No enemy troops in area"
+                android:textColor="@color/textColor"/>
 
             <CheckBox
                 android:id="@+id/possibleEnemy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="P - Possible enemy troops in area (Caution)" />
+                android:text="P - Possible enemy troops in area (Caution)"
+                android:textColor="@color/textColor"/>
 
             <CheckBox
                 android:id="@+id/mediumEnemy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="E - Enemy troops in area (Caution)" />
+                android:text="E - Enemy troops in area (Caution)"
+                android:textColor="@color/textColor"/>
 
             <CheckBox
                 android:id="@+id/needEscort"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="X - Enemy troops in area (escort required)" />
+                android:text="X - Enemy troops in area (escort required)"
+                android:textColor="@color/textColor"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -87,6 +92,7 @@
             android:gravity="center_horizontal">
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,6 +100,7 @@
                 android:layout_marginRight="16dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,6 +113,7 @@
             android:gravity="center"
             android:layout_marginTop="25dp">
             <Button
+                style="?attr/buttonStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"

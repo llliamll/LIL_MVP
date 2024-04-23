@@ -7,7 +7,8 @@
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Menu" />
+        android:text="Main Menu"
+        style="?attr/buttonStyleCustom"/>
 
 
     <!--    main page contents-->
@@ -38,7 +39,8 @@
             android:id="@+id/locField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Location" />
+            android:hint="Enter Location"
+            android:textColorHint="@color/textColor"/>
     </LinearLayout>
     <!--    main page contents-->
 
@@ -62,13 +64,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Back"
-                android:layout_marginRight="16dp"/>
+                android:layout_marginRight="16dp"
+                style="?attr/buttonStyleCustom"/>
 
             <Button
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Next" />
+                android:text="Next"
+                style="?attr/buttonStyleCustom"/>
         </LinearLayout>
 
         <LinearLayout
@@ -80,7 +84,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"
-                android:text="Save"/>
+                android:text="Save"
+                style="?attr/buttonStyleCustom"/>
         </LinearLayout>
 
         <ProgressBar

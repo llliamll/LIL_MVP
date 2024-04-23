@@ -4,6 +4,7 @@ android:layout_height="match_parent"
 android:padding="16dp">
 
     <Button
+        style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,6 +45,7 @@ android:padding="16dp">
                android:layout_marginLeft="10dp"/>
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonMinusA"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -58,6 +60,7 @@ android:padding="16dp">
                />
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonPlusA"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -75,6 +78,7 @@ android:padding="16dp">
                android:layout_marginLeft="10dp"/>
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonMinusB"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -89,6 +93,7 @@ android:padding="16dp">
                />
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonPlusB"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -106,6 +111,7 @@ android:padding="16dp">
                android:layout_marginLeft="10dp"/>
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonMinusC"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -120,6 +126,7 @@ android:padding="16dp">
                />
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonPlusC"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -137,6 +144,7 @@ android:padding="16dp">
                android:layout_marginLeft="10dp"/>
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonMinusD"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -151,6 +159,7 @@ android:padding="16dp">
                />
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonPlusD"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -168,6 +177,7 @@ android:padding="16dp">
                android:layout_marginLeft="10dp"/>
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonMinusE"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -182,6 +192,7 @@ android:padding="16dp">
                />
 
            <Button
+               style="?attr/buttonStyleCustom"
                android:id="@+id/buttonPlusE"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -206,6 +217,7 @@ android:padding="16dp">
             android:gravity="center_horizontal">
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -213,6 +225,7 @@ android:padding="16dp">
                 android:layout_marginRight="16dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -225,6 +238,7 @@ android:padding="16dp">
             android:gravity="center"
             android:layout_marginTop="25dp">
             <Button
+                style="?attr/buttonStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"

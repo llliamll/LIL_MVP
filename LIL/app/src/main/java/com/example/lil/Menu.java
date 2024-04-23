@@ -2,6 +2,7 @@ package com.example.lil;
 
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -10,6 +11,7 @@ import android.content.Intent;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -54,6 +56,14 @@ public class Menu extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //go to report UXO
+        Button buttonReportFive = findViewById(R.id.buttonPageFive);
+        buttonReportFive.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu.this, UXO.class);
+            intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         //view existing report(s)
         Button view = findViewById(R.id.viewReport);
         view.setOnClickListener(v -> {
@@ -62,15 +72,29 @@ public class Menu extends AppCompatActivity {
             startActivity(intent);
         });
 
-        //display a message for other buttons
+        //toggle night mode
+        Button nightMode = findViewById(R.id.nightMode);
+        nightMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int night = AppCompatDelegate.getDefaultNightMode();
+                if (night == AppCompatDelegate.MODE_NIGHT_YES) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+                recreate();
+            }
+        });
+
+
+        //display a message for other not yet implemented reports
         Button buttonReportTwo = findViewById(R.id.buttonPageTwo);
         otherButtons(buttonReportTwo);
         Button buttonReportThree = findViewById(R.id.buttonPageThree);
         otherButtons(buttonReportThree);
         Button buttonReportFour = findViewById(R.id.buttonPageFour);
         otherButtons(buttonReportFour);
-        Button buttonReportFive = findViewById(R.id.buttonPageFive);
-        otherButtons(buttonReportFive);
     }
 
     private void otherButtons(Button button){
@@ -78,4 +102,6 @@ public class Menu extends AppCompatActivity {
             Toast.makeText(Menu.this, "Not Yet Implemented...", Toast.LENGTH_SHORT).show();
         });
     }
+
+
 }

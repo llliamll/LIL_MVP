@@ -5,27 +5,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SALUTE_p4 extends AppCompatActivity{
-    private String size, activity, location, unit;
-
+public class UXO extends AppCompatActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.salute_p4);
+        setContentView(R.layout.uxo_p1);
 
-        //get previous variable(s)
         Bundle extras = getIntent().getExtras();
 
-        final EditText editText = findViewById(R.id.unitField);
+        final EditText editText = findViewById(R.id.dateTimeField);
         Button next = findViewById(R.id.Next);
         next.setOnClickListener(v -> {//record size and go to step three
-            Intent intent = new Intent(SALUTE_p4.this, SALUTE_p5.class);
-            extras.putString("unit", editText.getText().toString());
+            Intent intent = new Intent(UXO.this, UXO_p2.class);
+            extras.putString("line1", editText.getText().toString());
             intent.putExtras(extras);
             startActivity(intent);
         });
@@ -39,7 +35,7 @@ public class SALUTE_p4 extends AppCompatActivity{
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(SALUTE_p4.this, Menu.class);
+                    Intent intent = new Intent(UXO.this, Menu.class);
                     intent.putExtra("name", extras.getString("name"));
                     startActivity(intent);
                 }
@@ -57,22 +53,9 @@ public class SALUTE_p4 extends AppCompatActivity{
 
         Button back = findViewById(R.id.Back);
         back.setOnClickListener(v -> {//go to step one
-            Intent intent = new Intent(SALUTE_p4.this, SALUTE_p3.class);
-            intent.putExtras(extras);
+            Intent intent = new Intent(UXO.this, Menu.class);
+            intent.putExtra("name", extras.getString("name"));
             startActivity(intent);
         });
-
-        Button save = findViewById(R.id.saveNReview);
-        save.setOnClickListener(v -> {
-            if(!extras.getBoolean("edit")){
-                Toast.makeText(SALUTE_p4.this,"You have not complete other required fields yet", Toast.LENGTH_SHORT).show();
-            }else{
-                Intent intent = new Intent(SALUTE_p4.this, ReviewSALUTE.class);
-                extras.putString("unit", editText.getText().toString());
-                intent.putExtras(extras);
-                startActivity(intent);
-            }
-        });
     }
-
 }

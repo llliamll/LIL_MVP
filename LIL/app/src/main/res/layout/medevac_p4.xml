@@ -4,6 +4,7 @@
     android:padding="16dp">
 
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,25 +48,29 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/noEquip"
-               android:text="A - None"/>
+               android:text="A - None"
+               android:textColor="@color/textColor"/>
 
            <CheckBox
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/hoist"
-               android:text="B - Hoist"/>
+               android:text="B - Hoist"
+               android:textColor="@color/textColor"/>
 
            <CheckBox
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/extraction"
-               android:text="C - Extraction equipment"/>
+               android:text="C - Extraction equipment"
+               android:textColor="@color/textColor"/>
 
            <CheckBox
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/ventilator"
-               android:text="D - Ventilator"/>
+               android:text="D - Ventilator"
+               android:textColor="@color/textColor"/>
 
        </LinearLayout>
    </LinearLayout>
@@ -85,6 +90,7 @@
             android:gravity="center_horizontal">
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,6 +98,7 @@
                 android:layout_marginRight="16dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,6 +111,7 @@
             android:gravity="center"
             android:layout_marginTop="25dp">
             <Button
+                style="?attr/buttonStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"

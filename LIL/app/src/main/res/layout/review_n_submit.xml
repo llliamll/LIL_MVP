@@ -5,6 +5,7 @@
     android:padding="16dp">
 
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,6 +35,7 @@
             />
 
         <Button
+                style="?attr/buttonStyleCustom"
             android:id="@+id/editSize"
             android:layout_marginLeft="160dp"
             android:layout_width="wrap_content"
@@ -54,6 +56,7 @@
             />
 
         <Button
+                style="?attr/buttonStyleCustom"
             android:id="@+id/editActivity"
             android:layout_marginLeft="160dp"
             android:layout_width="wrap_content"
@@ -74,6 +77,7 @@
             android:layout_weight="1" />
 
         <Button
+                style="?attr/buttonStyleCustom"
             android:id="@+id/editLocation"
             android:layout_marginLeft="160dp"
             android:layout_width="wrap_content"
@@ -94,6 +98,7 @@
             />
 
         <Button
+                style="?attr/buttonStyleCustom"
             android:id="@+id/editUnit"
             android:layout_marginLeft="160dp"
             android:layout_width="wrap_content"
@@ -114,6 +119,7 @@
             />
 
         <Button
+                style="?attr/buttonStyleCustom"
             android:id="@+id/editTime"
             android:layout_marginLeft="160dp"
             android:layout_width="wrap_content"
@@ -134,6 +140,7 @@
             />
 
         <Button
+                style="?attr/buttonStyleCustom"
             android:id="@+id/editEquip"
             android:layout_marginLeft="160dp"
             android:layout_width="wrap_content"
@@ -147,6 +154,7 @@
         android:gravity="center"
         android:layout_marginTop="25dp">
         <Button
+                style="?attr/buttonStyleCustom"
             android:id="@+id/submitReport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

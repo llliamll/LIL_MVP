@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="buttonStyleCustom"    format="reference"/>
+    <attr name="editTextStyleCustom"  format="reference"/>
+    <attr name="checkboxStyleCustom"  format="reference"/>
+</resources>

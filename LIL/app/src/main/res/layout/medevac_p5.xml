@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     android:padding="16dp">
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +50,7 @@
                 android:text="L-Litter (Lying Down)" />
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/buttonMinusA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,6 +64,7 @@
                 android:padding="8dp" />
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/buttonPlusA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,6 +82,7 @@
                 android:text="A-Ambulatory (Can Sit)" />
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/buttonMinusB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,6 +96,7 @@
                 android:padding="8dp" />
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/buttonPlusB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -113,6 +118,7 @@
             android:gravity="center_horizontal">
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,6 +126,7 @@
                 android:layout_marginRight="16dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -132,6 +139,7 @@
             android:gravity="center"
             android:layout_marginTop="25dp">
             <Button
+                style="?attr/buttonStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"

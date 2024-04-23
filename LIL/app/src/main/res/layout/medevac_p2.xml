@@ -7,7 +7,8 @@
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Menu" />
+        android:text="Main Menu"
+        style="?attr/buttonStyleCustom"/>
 
     <!--    main page contents-->
     <LinearLayout
@@ -34,16 +35,19 @@
             android:textSize="16dp" />
 
         <EditText
+            style="?attr/buttonStyleCustom"
             android:id="@+id/radioField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Radio Frequency" />
         <EditText
+            style="?attr/buttonStyleCustom"
             android:id="@+id/callSignField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Call Sign" />
         <EditText
+            style="?attr/buttonStyleCustom"
             android:id="@+id/suffixField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,8 +55,6 @@
     </LinearLayout>
 
     <!--    main page contents-->
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,7 +65,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:orientation="horizontal"
             android:gravity="center_horizontal">
 
@@ -72,13 +73,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Back"
-                android:layout_marginRight="16dp"/>
+                android:layout_marginRight="16dp"
+                style="?attr/buttonStyleCustom"/>
 
             <Button
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Next" />
+                android:text="Next"
+                style="?attr/buttonStyleCustom"/>
         </LinearLayout>
 
         <LinearLayout
@@ -90,7 +93,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"
-                android:text="Save"/>
+                android:text="Save"
+                style="?attr/buttonStyleCustom"/>
         </LinearLayout>
 
         <ProgressBar

@@ -4,6 +4,7 @@
     android:padding="16dp">
 
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,6 +42,7 @@
             android:textSize="16dp"/>
 
         <EditText
+            android:textColorHint="@color/textColor"
             android:id="@+id/locField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,6 +66,7 @@
             android:gravity="center_horizontal">
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,6 +74,7 @@
                 android:layout_marginRight="16dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,6 +87,7 @@
             android:gravity="center"
             android:layout_marginTop="25dp">
             <Button
+                style="?attr/buttonStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"
@@ -98,7 +103,7 @@
             android:layout_marginBottom="16dp"
             android:indeterminate="false"
             android:max="9"
-            android:progress="1"
+            android:progress="2"
             />
         <LinearLayout
             android:layout_width="match_parent"
@@ -108,7 +113,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Line 1 of 9" />
+                android:text="Line 2 of 9" />
         </LinearLayout>
     </LinearLayout>
     <!-- Add other UI elements as needed -->

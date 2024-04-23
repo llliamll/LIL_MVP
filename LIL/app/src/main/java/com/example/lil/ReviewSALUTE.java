@@ -1,5 +1,6 @@
 package com.example.lil;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -8,12 +9,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 // right now this page is hardcoded(ish) that only support displaying report one items
 // for future this should be dynamic and display other reports' items
@@ -57,36 +61,42 @@ public class ReviewSALUTE extends AppCompatActivity{
         Button editSize = findViewById(R.id.editSize);
         editSize.setOnClickListener(v -> {
             Intent intent = new Intent(ReviewSALUTE.this, SALUTE.class);
+            extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button editActivity = findViewById(R.id.editActivity);
         editActivity.setOnClickListener(v -> {
             Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p2.class);
+            extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button editLocation = findViewById(R.id.editLocation);
         editLocation.setOnClickListener(v -> {
             Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p3.class);
+            extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button editUnit = findViewById(R.id.editUnit);
         editUnit.setOnClickListener(v -> {
             Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p4.class);
+            extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button editTime = findViewById(R.id.editTime);
         editTime.setOnClickListener(v -> {
             Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p5.class);
+            extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
         Button editEquip = findViewById(R.id.editEquip);
         editEquip.setOnClickListener(v -> {
             Intent intent = new Intent(ReviewSALUTE.this, SALUTE_p6.class);
+            extras.putBoolean("edit", true);
             intent.putExtras(extras);
             startActivity(intent);
         });
@@ -104,14 +114,41 @@ public class ReviewSALUTE extends AppCompatActivity{
         //back to menu, inputs will be cleared
         Button menu = findViewById(R.id.backToMenu);
         menu.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewSALUTE.this, Menu.class);
-            intent.putExtra("name",name);
-            startActivity(intent);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialogTheme);
+            builder.setTitle("Confirm back to menu");
+            builder.setMessage("All input will be cleared");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(ReviewSALUTE.this, Menu.class);
+                    intent.putExtra("name", extras.getString("name"));
+                    startActivity(intent);
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
         });
     }
 
     private void writeReport() {
-        String fileName = "SALUTE.txt";
+        // Get current date and time
+        LocalDateTime now = null;
+        String dateTime = "";
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            now = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            dateTime = now.format(formatter);
+        }
+
+        String fileName = "SALUTE " + dateTime + ".txt";
         FileOutputStream fileOutputStream = null;
         OutputStreamWriter outputStreamWriter = null;
         try {

@@ -1,87 +1,117 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Main Menu" />
 
-    <TextView
-        android:layout_width="386dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:baselineAligned="false"
-        android:gravity="center_horizontal"
-        android:text="SALUTE Report"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:text="Time:"
-        android:textSize="16dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="When observed, not the time reporting"
-        android:textSize="10dp" />
-
-    <EditText
-        android:id="@+id/timeField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Time here" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:orientation="vertical"
+        android:layout_above="@+id/bottomPanel"
+        android:layout_alignParentTop="true">
 
-
-
-        <Button
-            android:id="@+id/Back"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="386dp"
             android:layout_height="wrap_content"
-            android:text="Back"
-            android:layout_marginRight="16dp"/>
-
-        <Button
-            android:id="@+id/Next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next" />
-    </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/step"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:layout_marginBottom="16dp"
-        android:indeterminate="false"
-        android:max="6"
-        android:progress="5"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
+            android:layout_marginTop="120dp"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal"
+            android:text="SALUTE Report"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Line 5 of 6" />
+            android:layout_marginTop="45dp"
+            android:text="Time:"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="When observed, not the time reporting" />
+
+        <EditText
+            android:textColorHint="@color/textColor"
+            android:id="@+id/timeField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Time here" />
+
+    </LinearLayout>
+
+    <!--    progress bar page num and buttons    -->
+    <LinearLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <Button
+                style="?attr/buttonStyleCustom"
+                android:id="@+id/Back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_marginRight="16dp"/>
+
+            <Button
+                style="?attr/buttonStyleCustom"
+                android:id="@+id/Next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="25dp">
+            <Button
+                style="?attr/buttonStyleCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/saveNReview"
+                android:text="Save"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/step"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="16dp"
+            android:indeterminate="false"
+            android:max="6"
+            android:progress="5"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Line 5 of 6" />
+        </LinearLayout>
     </LinearLayout>
     <!-- Add other UI elements as needed -->
-</LinearLayout>
+</RelativeLayout>

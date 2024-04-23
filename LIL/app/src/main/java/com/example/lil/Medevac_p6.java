@@ -59,7 +59,7 @@ public class Medevac_p6 extends AppCompatActivity {
         Button menu = findViewById(R.id.backToMenu);
         menu.setOnClickListener(v -> {
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialogTheme);
             builder.setTitle("Confirm back to menu");
             builder.setMessage("All input will be cleared");
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){

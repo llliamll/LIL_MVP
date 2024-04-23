@@ -7,23 +7,36 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/menuUsername"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="25dp"
-        android:textSize="18dp"
+        android:orientation="vertical"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/menuUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="25dp"
+            android:textSize="18dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="270dp"
+            android:text="night mode"
+            android:id="@+id/nightMode"
+            style="?attr/buttonStyleCustom"/>
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Select the report or view existing reports:"
+        android:text="Select to report or view existing report(s):"
         android:textStyle="bold"
         android:textSize="20dp"
         android:layout_marginTop="150dp"
@@ -43,49 +56,56 @@
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginTop="100dp"
-            android:text="SALUTE" />
+            android:text="SALUTE"
+            style="?attr/buttonStyleCustom"/>
 
         <Button
             android:id="@+id/buttonPageTwo"
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:text="LACE" />
+            android:text="LACE"
+            style="?attr/buttonStyleCustom"/>
 
         <Button
             android:id="@+id/buttonPageThree"
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:text="Call for Fire" />
+            android:text="Call for Fire"
+            style="?attr/buttonStyleCustom"/>
 
         <Button
             android:id="@+id/buttonPageFour"
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:text="NBC1" />
+            android:text="NBC1"
+            style="?attr/buttonStyleCustom"/>
 
         <Button
             android:id="@+id/buttonPageFive"
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:text="9-Line UXO" />
+            android:text="9-Line UXO"
+            style="?attr/buttonStyleCustom"/>
 
         <Button
             android:id="@+id/buttonPageSix"
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:text="MEDEVAC" />
+            android:text="MEDEVAC"
+            style="?attr/buttonStyleCustom"/>
 
         <Button
             android:id="@+id/viewReport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="View exisiting report(s)" />
+            android:text="View exisiting report(s)"
+            style="?attr/buttonStyleCustom"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     android:padding="16dp">
 
     <Button
+                style="?attr/buttonStyleCustom"
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,31 +49,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/panels"
-                    android:text="A - Panels"/>
+                    android:text="A - Panels"
+                    android:textColor="@color/textColor"/>
 
                 <CheckBox
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/pyrotechnic"
-                    android:text="B - Pyrotechnic Signal"/>
+                    android:text="B - Pyrotechnic Signal"
+                    android:textColor="@color/textColor"/>
 
                 <CheckBox
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/smoke"
-                    android:text="C - Smoke signal"/>
+                    android:text="C - Smoke signal"
+                    android:textColor="@color/textColor"/>
 
                 <CheckBox
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/noMarking"
-                    android:text="D - None"/>
+                    android:text="D - None"
+                    android:textColor="@color/textColor"/>
 
                 <CheckBox
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/other"
-                    android:text="E - Other"/>
+                    android:text="E - Other"
+                    android:textColor="@color/textColor"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -91,6 +97,7 @@
             android:gravity="center_horizontal">
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,6 +105,7 @@
                 android:layout_marginRight="16dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,6 +118,7 @@
             android:gravity="center"
             android:layout_marginTop="25dp">
             <Button
+                style="?attr/buttonStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"

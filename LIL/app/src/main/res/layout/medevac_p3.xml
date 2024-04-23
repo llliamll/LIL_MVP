@@ -7,7 +7,8 @@
         android:id="@+id/backToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Menu" />
+        android:text="Main Menu"
+        style="?attr/buttonStyleCustom"/>
     <!--    main page contents-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
-                android:layout_marginLeft="100dp" />
+                android:layout_marginLeft="100dp"
+                style="?attr/buttonStyleCustom"/>
 
             <TextView
                 android:id="@+id/textViewCountA"
@@ -67,7 +69,8 @@
                 android:id="@+id/buttonPlusA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+" />
+                android:text="+"
+                style="?attr/buttonStyleCustom"/>
         </LinearLayout>
 
         <!--Priority B-->
@@ -86,7 +89,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
-                android:layout_marginLeft="97dp" />
+                android:layout_marginLeft="97dp"
+                style="?attr/buttonStyleCustom"/>
 
             <TextView
                 android:id="@+id/textViewCountB"
@@ -99,7 +103,8 @@
                 android:id="@+id/buttonPlusB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+" />
+                android:text="+"
+                style="?attr/buttonStyleCustom"/>
         </LinearLayout>
         <!--Routine C-->
         <LinearLayout
@@ -113,6 +118,7 @@
                 android:layout_marginLeft="25dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/buttonMinusC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -127,6 +133,7 @@
                 />
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/buttonPlusC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -144,6 +151,7 @@
                 android:layout_marginLeft="25dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/buttonMinusD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,6 +166,7 @@
                 />
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/buttonPlusD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -178,11 +187,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:orientation="horizontal"
             android:gravity="center_horizontal">
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -190,6 +199,7 @@
                 android:layout_marginRight="16dp"/>
 
             <Button
+                style="?attr/buttonStyleCustom"
                 android:id="@+id/Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -202,6 +212,7 @@
             android:gravity="center"
             android:layout_marginTop="25dp">
             <Button
+                style="?attr/buttonStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/saveNReview"

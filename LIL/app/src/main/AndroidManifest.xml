@@ -4,7 +4,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,8 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LIL"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -35,87 +35,87 @@
 
         <activity android:name=".SALUTE"
             android:label="report_1_step_2"
-            android:parentActivityName=".Menu">
+            android:parentActivityName=".Menu"
+            android:windowSoftInputMode="adjustResize">
         </activity>
 
         <activity android:name=".SALUTE_p2"
             android:label="report_1_step_2"
-            android:parentActivityName=".SALUTE">
+            android:parentActivityName=".SALUTE"
+            android:windowSoftInputMode="adjustResize">
         </activity>
 
         <activity android:name=".SALUTE_p3"
             android:label="report_1_step_2"
-            android:parentActivityName=".SALUTE_p2">
+            android:parentActivityName=".SALUTE_p2"
+            android:windowSoftInputMode="adjustResize">
         </activity>
 
         <activity android:name=".SALUTE_p4"
             android:label="report_1_step_2"
-            android:parentActivityName=".SALUTE_p3">
+            android:parentActivityName=".SALUTE_p3"
+            android:windowSoftInputMode="adjustResize">
         </activity>
 
         <activity android:name=".SALUTE_p5"
             android:label="report_1_step_2"
-            android:parentActivityName=".SALUTE_p4">
+            android:parentActivityName=".SALUTE_p4"
+            android:windowSoftInputMode="adjustResize">
         </activity>
 
         <activity android:name=".SALUTE_p6"
             android:label="report_1_step_2"
-            android:parentActivityName=".SALUTE_p5">
+            android:parentActivityName=".SALUTE_p5"
+            android:windowSoftInputMode="adjustResize">
         </activity>
 
         <activity android:name=".ReviewSALUTE"
             android:label="report_1_step_2"
-            android:parentActivityName=".SALUTE_p6">
-        </activity>
+            android:parentActivityName=".SALUTE_p6"
+            android:windowSoftInputMode="adjustResize"/>
 
+        <!--        Medevac report          -->
         <activity android:name=".Medevac"
-            android:label="medevac"
-            android:parentActivityName=".MainActivity">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Medevac_p2"
-            android:label="medevac_p2"
-            android:parentActivityName=".Medevac">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Medevac_p3"
-            android:label="medevac_p3"
-            android:parentActivityName=".Medevac_p2">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Medevac_p4"
-            android:label="medevac_p4"
-            android:parentActivityName=".Medevac_p3">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Medevac_p5"
-            android:label="medevac_p5"
-            android:parentActivityName=".Medevac_p4">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Medevac_p6"
-            android:label="medevac_p6"
-            android:parentActivityName=".Medevac_p5">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Medevac_p7"
-            android:label="medevac_p7"
-            android:parentActivityName=".Medevac_p6">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Medevac_p8"
-            android:label="medevac_p8"
-            android:parentActivityName=".Medevac_p7">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Medevac_p9"
-            android:label="medevac_p5"
-            android:parentActivityName=".Medevac_p8">
-        </activity>
-        
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".ReviewMedevac"
-            android:label="reviewMedevac"
-            android:parentActivityName=".Medevac_p9"/>
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!--        UXO report          -->
+        <activity android:name=".UXO"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".UXO_p2"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".UXO_p3"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".UXO_p4"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".UXO_p5"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".UXO_p6"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".UXO_p7"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".UXO_p8"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".UXO_p9"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".ReviewUXO"/>
 
     </application>
 

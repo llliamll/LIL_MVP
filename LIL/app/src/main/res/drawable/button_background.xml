@@ -1,0 +1,5 @@
+<!-- In your drawable folder, create a file named button_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/colorPrimary" />
+</shape>

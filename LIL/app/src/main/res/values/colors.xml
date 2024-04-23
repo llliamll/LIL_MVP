@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#0092ff</color>
+    <color name="textColor">#000000</color>
+    <color name="dialogBackgroundColor">#000000</color>
+
+    <color name="dialogTitleColor">#000000</color>
+    <color name="dialogMessageColor">#000000</color>
+
 </resources>

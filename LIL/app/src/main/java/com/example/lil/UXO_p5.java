@@ -5,53 +5,48 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Medevac_p4 extends AppCompatActivity {
+public class UXO_p5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.medevac_p4);
+        setContentView(R.layout.uxo_p5);
 
         //retrieve previous data
         Intent intentFromLast = getIntent();
         Bundle extras = intentFromLast.getExtras();
 
         //main page functions
-        CheckBox checkA = findViewById(R.id.noEquip);
-        CheckBox checkB = findViewById(R.id.hoist);
-        CheckBox checkC = findViewById(R.id.extraction);
-        CheckBox checkD = findViewById(R.id.ventilator);
+        CheckBox checkA = findViewById(R.id.yes);
+        CheckBox checkB = findViewById(R.id.no);
+        EditText text   = findViewById(R.id.otherContamination);
 
 
         //next back and menu buttons
         Button next = findViewById(R.id.Next);
         next.setOnClickListener(v -> {
-            Intent intent = new Intent(Medevac_p4.this, Medevac_p5.class);
-            String line4 = "";
+            Intent intent = new Intent(UXO_p5.this, UXO_p6.class);
+            String line5 = "";
             if(checkA.isChecked()){
-                line4 += "A ";
+                line5 += "Yes " + text.getText().toString();
             }
             if(checkB.isChecked()){
-                line4 += "B ";
+                line5 += "No NBC Contamination";
             }
-            if(checkC.isChecked()){
-                line4 += "C ";
-            }
-            if(checkD.isChecked()){
-                line4 += "D";
-            }
-            extras.putString("line4", line4);
+
+            extras.putString("line5", line5);
             intent.putExtras(extras);
             startActivity(intent);
         });
 
         Button back = findViewById(R.id.Back);
         back.setOnClickListener(v -> {
-            Intent intent = new Intent(Medevac_p4.this, Medevac_p3.class);
+            Intent intent = new Intent(UXO_p5.this, UXO_p4.class);
             intent.putExtras(extras);
             startActivity(intent);
         });
@@ -59,12 +54,12 @@ public class Medevac_p4 extends AppCompatActivity {
         Button menu = findViewById(R.id.backToMenu);
         menu.setOnClickListener(v -> {
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this , R.style.CustomAlertDialogTheme);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialogTheme);
             builder.setTitle("Confirm back to menu");
             builder.setMessage("All input will be cleared");
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(Medevac_p4.this, Menu.class);
+                    Intent intent = new Intent(UXO_p5.this, Menu.class);
                     intent.putExtra("name", extras.getString("name"));
                     startActivity(intent);
                 }
@@ -82,23 +77,18 @@ public class Medevac_p4 extends AppCompatActivity {
         Button save = findViewById(R.id.saveNReview);
         save.setOnClickListener(v -> {
             if(!extras.getBoolean("edit")){
-                Toast.makeText(Medevac_p4.this, "You have not complete other required fields yet", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UXO_p5.this, "You have not complete other required fields yet", Toast.LENGTH_SHORT).show();
             }else {
-                Intent intent = new Intent(Medevac_p4.this, ReviewMedevac.class);
-                String line4 = "";
+                Intent intent = new Intent(UXO_p5.this, ReviewUXO.class);
+                String line5 = "";
                 if(checkA.isChecked()){
-                    line4 += "A ";
+                    line5 += "Yes " + text.getText().toString();
                 }
                 if(checkB.isChecked()){
-                    line4 += "B ";
+                    line5 += "No NBC Contamination";
                 }
-                if(checkC.isChecked()){
-                    line4 += "C ";
-                }
-                if(checkD.isChecked()){
-                    line4 += "D";
-                }
-                extras.putString("line4", line4);
+
+                extras.putString("line5", line5);
                 intent.putExtras(extras);
                 startActivity(intent);
             }
