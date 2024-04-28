@@ -4,9 +4,12 @@ This is the repo for the USAF-507 project MVP.
 To run, modify, or test the code: 
 - Download Android Studio 
 - Clone and open the entire directory in Android Studio.
-- Go to app/src/main/java/com/example/lil
-- You can now run the MainActivity.java to see app behavior 
+- Go to app/src/main/java/com.example.lil
+- You can now run the MainActivity.java to see app behavior or modify other java files
 - The UI/layout files are in app/src/main/res
+
+To install on a device
+- Go to LIL/APP/release and download the USAF507_MVP.apk
 
 I have implemented the SALUTE, UXO, and MEDEVAC reporting processes which can be accessed through the main menu. 
 The night mode button can make the app present content on a black background with red text for low-light scenarios.
